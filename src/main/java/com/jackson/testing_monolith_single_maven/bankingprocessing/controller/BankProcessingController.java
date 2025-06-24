@@ -22,6 +22,10 @@ public class BankProcessingController extends ApiResponseHandler {
         return ok(null, "Withdraw Successfully");
     }
 
+    @PostMapping("/deposit")
+    public ResponseEntity<?> processDeposit(){
+        return ok(null,"Deposit Successfully");
+    }
 
 
 
