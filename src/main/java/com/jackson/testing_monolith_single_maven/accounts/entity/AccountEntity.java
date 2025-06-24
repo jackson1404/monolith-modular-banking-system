@@ -9,6 +9,7 @@ package com.jackson.testing_monolith_single_maven.accounts.entity;
 import com.jackson.testing_monolith_single_maven.accounts.dto.AccountDto;
 import com.jackson.testing_monolith_single_maven.common.base.AuditableEntity;
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -18,6 +19,7 @@ import lombok.RequiredArgsConstructor;
  *
  * @author
  */
+@Getter
 @Entity
 @Table(name = "tbl_accounts")
 public class AccountEntity extends AuditableEntity {
@@ -32,32 +34,16 @@ public class AccountEntity extends AuditableEntity {
 
     private Long accountBalance;
 
-    public Long getAccountId() {
-        return accountId;
-    }
-
     public void setAccountId(Long accountId) {
         this.accountId = accountId;
-    }
-
-    public String getAccountNo() {
-        return accountNo;
     }
 
     public void setAccountNo(String accountNo) {
         this.accountNo = accountNo;
     }
 
-    public String getAccountName() {
-        return accountName;
-    }
-
     public void setAccountName(String accountName) {
         this.accountName = accountName;
-    }
-
-    public Long getAccountBalance() {
-        return accountBalance;
     }
 
     public void setAccountBalance(Long accountBalance) {

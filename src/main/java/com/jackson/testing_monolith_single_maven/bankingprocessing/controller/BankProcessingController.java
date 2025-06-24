@@ -1,11 +1,28 @@
 package com.jackson.testing_monolith_single_maven.bankingprocessing.controller;
 
-import org.springframework.stereotype.Controller;
+import com.jackson.testing_monolith_single_maven.bankingprocessing.dto.BankProcessingDto;
+import com.jackson.testing_monolith_single_maven.bankingprocessing.service.BankProcessingService;
+import com.jackson.testing_monolith_single_maven.common.api.ApiResponseHandler;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class BankProcessingController {
+@RestController
+public class BankProcessingController extends ApiResponseHandler {
 
-    
+    @Autowired
+    private BankProcessingService bankProcessingService;
+
+    @PostMapping("/withdraw")
+    public ResponseEntity<?> bankWithdraw(@RequestBody BankProcessingDto bankProcessingDto){
+
+        bankProcessingService.processWithdraw(bankProcessingDto);
+        return ok(null, "Withdraw Successfully");
+    }
+
+
 
 
 }

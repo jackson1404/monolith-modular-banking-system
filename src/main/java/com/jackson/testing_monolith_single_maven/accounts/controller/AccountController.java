@@ -10,10 +10,8 @@ package com.jackson.testing_monolith_single_maven.accounts.controller;
 import com.jackson.testing_monolith_single_maven.accounts.dto.AccountDto;
 import com.jackson.testing_monolith_single_maven.accounts.entity.AccountEntity;
 import com.jackson.testing_monolith_single_maven.accounts.service.AccountService;
-import com.jackson.testing_monolith_single_maven.common.api.ApiResponse;
-import com.jackson.testing_monolith_single_maven.common.api.ResponseHandler;
+import com.jackson.testing_monolith_single_maven.common.api.ApiResponseHandler;
 import org.modelmapper.ModelMapper;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +28,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/account/")
-public class AccountController extends ResponseHandler {
+public class AccountController extends ApiResponseHandler {
 
     private final ModelMapper modelMapper;
 
