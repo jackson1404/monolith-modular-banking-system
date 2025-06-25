@@ -24,6 +24,7 @@ import java.util.Random;
 @Component
 public class TransactionUtils {
 
+    // comment
     @Autowired
     private TransactionRepository transactionRepository;
 
