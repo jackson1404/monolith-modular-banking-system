@@ -10,6 +10,7 @@ import com.jackson.testing_monolith_single_maven.accounts.entity.AccountEntity;
 import com.jackson.testing_monolith_single_maven.bankingoperations.enumerate.TransactionType;
 import com.jackson.testing_monolith_single_maven.transactions.entity.TransactionEntity;
 import com.jackson.testing_monolith_single_maven.transactions.repository.TransactionRepository;
+import com.jackson.testing_monolith_single_maven.transactions.utils.TransactionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +38,15 @@ public class TransactionService {
         return transactions;
     }
 
-    public void recordTransaction(AccountEntity account, Double processAmount, TransactionType withdraw, String withdraw_successfully) {
+    public void recordTransaction(AccountEntity account, Double processAmount, TransactionType withdraw, String description) {
+
+        TransactionEntity transaction = new TransactionEntity();
+        transaction.setTransactionNo(TransactionUtils.generateTransactionNo());
+        transaction.setTransactionAmount(processAmount);
+        transaction.setTransactionDescription(description);
+        transaction.setTransactionType(withdraw);
+
+        transactionRepository.save(transaction);
     }
 
 
