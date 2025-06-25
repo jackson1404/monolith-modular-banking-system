@@ -25,7 +25,7 @@ import java.util.Random;
 public class TransactionUtils {
 
     // commentgit
-    //comment inteljs
+    //comment from intelj commit
     @Autowired
     private TransactionRepository transactionRepository;
 
