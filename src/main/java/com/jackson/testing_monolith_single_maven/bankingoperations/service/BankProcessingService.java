@@ -23,9 +23,7 @@ public class BankProcessingService {
     private AccountRepository accountRepository;
 
     public void processWithdraw(BankProcessingDto bankProcessingDto) {
-        AccountEntity account = accountRepository
-                .findByAccountNo(bankProcessingDto.getAccountNo())
-                .orElseThrow(() -> new BankAccountNotFoundException("No bank account found or incorrect account number"));
+        AccountEntity account = getAccountByRequestDto(bankProcessingDto);
 
         Double processAmount = bankProcessingDto.getProcessAmount();
 
@@ -36,4 +34,23 @@ public class BankProcessingService {
 
     }
 
+    private AccountEntity getAccountByRequestDto(BankProcessingDto bankProcessingDto) {
+        AccountEntity account = accountRepository
+                .findByAccountNo(bankProcessingDto.getAccountNo())
+                .orElseThrow(() -> new BankAccountNotFoundException("No bank account found or incorrect account number"));
+        return account;
+    }
+
+    public void processDeposit(BankProcessingDto bankProcessingDto) {
+
+        AccountEntity account = getAccountByRequestDto(bankProcessingDto);
+
+        Double processAmount = bankProcessingDto.getProcessAmount();
+
+        account.setAccountBalance(account.getAccountBalance() + processAmount);
+        accountRepository.save(account);
+
+        transactionService.recordTransaction(account, processAmount, TransactionType.DEPOSIT, "Deposited successfully");
+
+    }
 }
