@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
  * BaseEntity Class.
  * <p>
  * </p>
- *
+ *git
  * @author
  */
 @MappedSuperclass

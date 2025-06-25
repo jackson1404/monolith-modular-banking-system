@@ -1,7 +1,7 @@
-package com.jackson.testing_monolith_single_maven.bankingprocessing.controller;
+package com.jackson.testing_monolith_single_maven.bankingoperations.controller;
 
-import com.jackson.testing_monolith_single_maven.bankingprocessing.dto.BankProcessingDto;
-import com.jackson.testing_monolith_single_maven.bankingprocessing.service.BankProcessingService;
+import com.jackson.testing_monolith_single_maven.bankingoperations.dto.BankProcessingDto;
+import com.jackson.testing_monolith_single_maven.bankingoperations.service.BankProcessingService;
 import com.jackson.testing_monolith_single_maven.common.api.ApiResponseHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -35,4 +35,5 @@ public class TransactionController {
     public List<TransactionEntity> getTransactions() {
         return transactionService.getAllTransactions();
     }
+
 }

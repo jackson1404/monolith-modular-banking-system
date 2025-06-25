@@ -32,7 +32,7 @@ public class AccountEntity extends AuditableEntity {
 
     private String accountName;
 
-    private Long accountBalance;
+    private Double accountBalance;
 
     public void setAccountId(Long accountId) {
         this.accountId = accountId;
@@ -46,13 +46,13 @@ public class AccountEntity extends AuditableEntity {
         this.accountName = accountName;
     }
 
-    public void setAccountBalance(Long accountBalance) {
+    public void setAccountBalance(Double accountBalance) {
         this.accountBalance = accountBalance;
     }
 
     public AccountEntity(){}
 
-    public AccountEntity(Long accountId, String accountNo, String accountName, Long accountBalance) {
+    public AccountEntity(Long accountId, String accountNo, String accountName, Double accountBalance) {
         this.accountId = accountId;
         this.accountNo = accountNo;
         this.accountName = accountName;

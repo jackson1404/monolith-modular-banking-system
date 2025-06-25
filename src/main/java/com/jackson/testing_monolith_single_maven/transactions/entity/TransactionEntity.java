@@ -7,10 +7,7 @@
 package com.jackson.testing_monolith_single_maven.transactions.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * TransactionEntity Class.
@@ -21,9 +18,7 @@ import lombok.ToString;
  */
 @Entity
 @Table(name = "tbl_transactions")
-@Getter
-@Setter
-@ToString
+@Data
 @RequiredArgsConstructor
 public class TransactionEntity {
 

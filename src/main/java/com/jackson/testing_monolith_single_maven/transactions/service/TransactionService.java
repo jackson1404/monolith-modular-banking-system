@@ -6,6 +6,8 @@
  * *************************************************************/
 package com.jackson.testing_monolith_single_maven.transactions.service;
 
+import com.jackson.testing_monolith_single_maven.accounts.entity.AccountEntity;
+import com.jackson.testing_monolith_single_maven.bankingoperations.enumerate.TransactionType;
 import com.jackson.testing_monolith_single_maven.transactions.entity.TransactionEntity;
 import org.springframework.stereotype.Service;
 
@@ -27,4 +29,9 @@ public class TransactionService {
     public List<TransactionEntity> getAllTransactions() {
         return transactions;
     }
+
+    public void recordTransaction(AccountEntity account, Double processAmount, TransactionType withdraw, String withdraw_successfully) {
+    }
+
+
 }

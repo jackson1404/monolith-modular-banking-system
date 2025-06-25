@@ -1,9 +1,7 @@
-package com.jackson.testing_monolith_single_maven.bankingprocessing.dto;
+package com.jackson.testing_monolith_single_maven.bankingoperations.dto;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 @Data
 @RequiredArgsConstructor
@@ -11,7 +9,7 @@ public class BankProcessingDto {
 
     private String accountNo;
 
-    private Long processAmount;
+    private Double processAmount;
 
 
 }
