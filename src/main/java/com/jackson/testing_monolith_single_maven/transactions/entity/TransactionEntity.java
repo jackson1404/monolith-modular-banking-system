@@ -32,6 +32,10 @@ public class TransactionEntity {
 
     private String toAccount;
 
+    private String transactionDescription;
+
+    private String transactionType;
+
     private Long transactionAmount;
 
 
