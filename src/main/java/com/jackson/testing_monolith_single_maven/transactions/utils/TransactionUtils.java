@@ -24,8 +24,8 @@ import java.util.Random;
 @Component
 public class TransactionUtils {
 
-    // commentgit
     //comment from intelj commit
+    // fix
     @Autowired
     private TransactionRepository transactionRepository;
 
