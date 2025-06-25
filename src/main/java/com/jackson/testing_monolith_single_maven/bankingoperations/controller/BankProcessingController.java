@@ -23,7 +23,8 @@ public class BankProcessingController extends ApiResponseHandler {
     }
 
     @PostMapping("/deposit")
-    public ResponseEntity<?> processDeposit(){
+    public ResponseEntity<?> processDeposit(@RequestBody BankProcessingDto bankProcessingDto){
+        bankProcessingService.processDeposit(bankProcessingDto);
         return ok(null,"Deposit Successfully");
     }
 
