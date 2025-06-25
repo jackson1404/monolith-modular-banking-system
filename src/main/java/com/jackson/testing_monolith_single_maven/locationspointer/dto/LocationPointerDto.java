@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LocationPointerDto {
 
+    //comment
+    
     @JsonProperty("lat")
     private String lat;
 
