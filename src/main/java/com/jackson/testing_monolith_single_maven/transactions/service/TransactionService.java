@@ -31,6 +31,8 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
+    @Autowired
+    private TransactionUtils transactionUtils;
 
     private final List<TransactionEntity> transactions = new ArrayList<>();
 
@@ -38,12 +40,12 @@ public class TransactionService {
         return transactions;
     }
 
-    public void recordTransaction(AccountEntity account, Double processAmount, TransactionType withdraw, String description) {
+    public void recordTransaction(AccountEntity fromAccount, Double processAmount, TransactionType withdraw, String description) {
 
         TransactionEntity transaction = new TransactionEntity();
-        transaction.setTransactionNo(TransactionUtils.generateTransactionNo());
+        transaction.setTransactionNo(transactionUtils.generateTransactionNo());
         transaction.setTransactionAmount(processAmount);
-        transaction.setFromAccount(account.getAccountName());
+        transaction.setFromAccount(fromAccount.getAccountName());
         transaction.setTransactionDescription(description);
         transaction.setTransactionType(withdraw);
 

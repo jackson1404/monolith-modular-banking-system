@@ -6,6 +6,8 @@
  * *************************************************************/
 package com.jackson.testing_monolith_single_maven.transactions.utils;
 
+import com.jackson.testing_monolith_single_maven.transactions.repository.TransactionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -19,12 +21,24 @@ import java.util.Random;
  *
  * @author
  */
-
+@Component
 public class TransactionUtils {
 
-    public static String generateTransactionNo() {
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS"));
-        int random = new Random().nextInt(900) + 100;
-        return "TXN" + timestamp + random;
+    @Autowired
+    private TransactionRepository transactionRepository;
+
+    public String generateTransactionNo() {
+
+        String maxNumber = transactionRepository.findMaxTransactionNo();
+
+        int nextNumber = 1;
+
+        if(maxNumber!= null){
+            String numericPart = maxNumber.substring(3);
+            int currentNumber = Integer.parseInt(numericPart);
+            nextNumber = currentNumber + 1;
+        }
+
+        return "TXN" + String.format("%08d" , nextNumber); // TXN00000001
     }
 }
