@@ -31,7 +31,7 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<TransactionEntity> getTransactions() {
         return transactionService.getAllTransactions();
     }

@@ -34,10 +34,8 @@ public class TransactionService {
     @Autowired
     private TransactionUtils transactionUtils;
 
-    private final List<TransactionEntity> transactions = new ArrayList<>();
-
     public List<TransactionEntity> getAllTransactions() {
-        return transactions;
+        return transactionRepository.findAll();
     }
 
     public void recordTransaction(AccountEntity fromAccount, Double processAmount, TransactionType withdraw, String description) {
