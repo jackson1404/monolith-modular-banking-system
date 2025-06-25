@@ -43,6 +43,7 @@ public class TransactionService {
         TransactionEntity transaction = new TransactionEntity();
         transaction.setTransactionNo(TransactionUtils.generateTransactionNo());
         transaction.setTransactionAmount(processAmount);
+        transaction.setFromAccount(account.getAccountName());
         transaction.setTransactionDescription(description);
         transaction.setTransactionType(withdraw);
 

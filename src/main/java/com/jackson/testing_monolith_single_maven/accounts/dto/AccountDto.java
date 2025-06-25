@@ -23,7 +23,7 @@ public class AccountDto {
     private Long id;
     private String accountNo;
     private String accountName;
-    private Long accountBalance;
+    private Double accountBalance;
 
     public Long getId() {
         return id;
@@ -49,11 +49,11 @@ public class AccountDto {
         this.accountName = accountName;
     }
 
-    public Long getAccountBalance() {
+    public Double getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(Long accountBalance) {
+    public void setAccountBalance(Double accountBalance) {
         this.accountBalance = accountBalance;
     }
 }
